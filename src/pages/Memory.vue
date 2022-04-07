@@ -44,7 +44,7 @@ const handleClicked = (card:card) => {
 <template>
   <n-layout-content>
     <n-grid
-      class="absolute"
+      class="absolute bg-gray-200"
       x-gap="2"
       y-gap="6"
       cols="1 s:4 m:4 l:4 xl:4 2xl:4"
