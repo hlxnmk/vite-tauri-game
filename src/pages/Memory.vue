@@ -29,7 +29,7 @@ const handleClicked = (card:card) => {
   // console.log('flipped_tiles', flipped_tiles)
 
   if (flipped_tiles.length === 2) {
-    if (flipped_tiles[0].url === flipped_tiles[1].url) {
+    if (flipped_tiles[0].url === flipped_tiles[1].url && flipped_tiles[0].id !== flipped_tiles[1].id) {
       flipped_tiles.forEach(card=>card.isMatched=true)
     } else {
      flipped_tiles.forEach(card=>card.isChecked=false)
