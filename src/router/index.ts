@@ -4,12 +4,14 @@ import { createRouter, createWebHistory } from 'vue-router'
 // 引入组件 
 import Content from '../pages/Content.vue'
 import Memory from '../pages/Memory.vue'
+import SchulteGrid from '../pages/SchulteGrid.vue'
 
 //定义路由路径
 const routes = [
   { path: '/', component: Content },
   { path: '/content', component: Content },
   { path: '/memory', component: Memory },
+   { path: '/schultegrid', component: SchulteGrid },
 
 ]
 // 创建路由 
