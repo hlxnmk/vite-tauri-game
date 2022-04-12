@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NSpace, NLayout,NConfigProvider} from 'naive-ui';
+import { NSpace, NLayout,NConfigProvider,NMessageProvider} from 'naive-ui';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import { useConfigStore } from './store/config'
@@ -15,7 +15,9 @@ const {theme,locale,dateLocale}= storeToRefs(config)//设置响应式
   <n-space vertical size="large">
     <n-layout>
       <Header />
+      <n-message-provider>
       <router-view></router-view>
+      </n-message-provider>
       <Footer />
     </n-layout>
   </n-space>
