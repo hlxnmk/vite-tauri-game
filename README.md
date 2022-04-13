@@ -1,4 +1,4 @@
-# Vue 3 + Typescript + Vite
+# Vue 3 + Typescript + vite2 + tauri + naiveui + unocss + animatecss + pinia + axios + vue-router
 
 
    - pnpm dev
@@ -10,7 +10,7 @@ This template should help get you started developing with Vue 3 and Typescript i
 
 ## Recommended IDE Setup
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) + [Tauri](https://tauri.studio/) + [Naivi-ui](https://www.naiveui.com/en-US/os-theme) + [Unocss](https://github.com/unocss/unocss) + [Pinia](https://pinia.vuejs.org/) + [Animatecss](https://animate.style/)
 
 ## Type Support For `.vue` Imports in TS
 
