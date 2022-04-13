@@ -3,8 +3,10 @@ import { NLayoutContent, NGrid, NGridItem, NGradientText, NSpace, NRadioGroup, N
 import { useSchulteStore } from '../store/schulte'
 import { ref } from 'vue'
 import { useStopwatch } from 'vue-timer-hook'
+import { useRouter } from 'vue-router' //3.2setup中使用路由需要引入
+const router = useRouter()
 
-let stopwatch = useStopwatch(true)
+let stopwatch = useStopwatch()
 let message = useMessage()
 
 const schulte = useSchulteStore()
@@ -41,6 +43,8 @@ const square = [
 
 const initialize = () => {
   stopwatch.reset()
+  const shuffle = (arr: any[]) => arr.sort(() => 0.5 - Math.random())
+  shuffle(handleChange())
   handleChange().forEach((card: { isChecked: boolean; }) => card.isChecked = false)
   handleChange().forEach((card: { isMatched: boolean; }) => card.isMatched = false)
   clickedCard = []
@@ -104,6 +108,8 @@ const handleClicked = (card: card) => {
 
   <n-layout-content>
     <n-space class="h-15 pt-5 pl-48 bg-gray-200">
+       <n-button class="bi:arrow-left  text-xl text-green-500 animate__animated animate__slideOutLeft animate__slower animate__infinite" type="primary" size="tiny" @click="router.back()">
+      </n-button>
       <n-gradient-text type="success" class="pl-8 animate-pulse">请选择数字方格大小</n-gradient-text>
       <n-radio-group v-model:value="value" name="radiogroup">
         <n-radio v-for="s in square" :key="s.value" :value="s.value" @change="handleChange()">
@@ -135,7 +141,7 @@ const handleClicked = (card: card) => {
 
 <style scoped>
 .n-layout-content {
-  background: rgba(128, 128, 128, 0.4);
+  background: #E5E7EB;
   position: fixed;
   top: 0;
   left: 0;
