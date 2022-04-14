@@ -10,7 +10,7 @@ let stopwatch = useStopwatch()
 let message = useMessage()
 
 const schulte = useSchulteStore()
-const value = ref<string | null>('3')
+const value = ref('3')
 
 let squaregird = schulte.square3x3
 function handleChange() {
