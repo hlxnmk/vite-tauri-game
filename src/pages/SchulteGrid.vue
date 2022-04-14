@@ -20,9 +20,15 @@ function handleChange() {
     squaregird = schulte.square4x4
 
   } else if (value.value == '5') {
-    squaregird = schulte.square5x5
-  }
 
+    squaregird = schulte.square5x5N
+
+    console.log(squaregird)
+
+  }else if (value.value == '6') {
+    squaregird = schulte.square5x6L
+    console.log(squaregird)
+  }
   return squaregird
 }
 
@@ -37,8 +43,13 @@ const square = [
   },
   {
     value: '5',
-    label: '5X5'
+    label: '5X5N'
   },
+  {
+    value: '6',
+    label: '5X6L'
+  },
+  
 ]
 
 const initialize = () => {
@@ -53,16 +64,14 @@ const initialize = () => {
 // 定义一个接口来约束card类型
 interface card {
   id: number;
-  value: number;
+  value: number|string;
   isChecked: boolean;
   isMatched: boolean;
 }
 
 let clickedCard: card[] = []
 const handleClicked = (card: card) => {
-  // console.log('all', handleChange())
-  // console.log('1111', handleChange().some(item => { return item.id == 1 && item.isMatched }))
-  // console.log('clickedCard', clickedCard)
+ 
   if (!card.isMatched) {
     card.isChecked = true
   }
@@ -108,7 +117,9 @@ const handleClicked = (card: card) => {
 
   <n-layout-content>
     <n-space class="h-15 pt-5 pl-48 bg-gray-200">
-       <n-button class="bi:arrow-left  text-xl text-green-500 animate__animated animate__slideOutLeft animate__slower animate__infinite" type="primary" size="tiny" @click="router.back()">
+      <n-button
+        class="bi:arrow-left  text-xl text-green-500 animate__animated animate__slideOutLeft animate__slower animate__infinite"
+        type="primary" size="tiny" @click="router.back()">
       </n-button>
       <n-gradient-text type="success" class="pl-8 animate-pulse">请选择数字方格大小</n-gradient-text>
       <n-radio-group v-model:value="value" name="radiogroup">
@@ -116,10 +127,10 @@ const handleClicked = (card: card) => {
           <div class="text-green-600">{{ s.label }}</div>
         </n-radio>
       </n-radio-group>
-      <n-button class=" ml-5" type="primary" size="tiny" @click="initialize">
+      <n-button  type="primary" size="tiny" @click="initialize">
         开始
       </n-button>
-      <n-gradient-text type="error" class="pl-8 animate-pulse">
+      <n-gradient-text type="error" class="pl-5 animate-pulse">
         <div>
           <span class="text-green-600 pr-5">用时:</span>
           <span>{{ stopwatch.hours }}</span>:
@@ -128,7 +139,7 @@ const handleClicked = (card: card) => {
         </div>
       </n-gradient-text>
     </n-space>
-    <n-grid class="bg-gray-200 pl-8 " x-gap="2" y-gap="6" :cols="value">
+    <n-grid class="bg-gray-200 pl-8 " x-gap="2" y-gap="6" :cols=value>
       <n-grid-item :class="card.isMatched && card.isChecked ? 'bg-sky-700' : 'bg-indigo-400'"
         class="animate__animated animate__heartBeat rounded-lg w-30 h-30 flex justify-center items-center text-6xl"
         v-for="card in handleChange()" :key="card.id" @click="handleClicked(card)">
