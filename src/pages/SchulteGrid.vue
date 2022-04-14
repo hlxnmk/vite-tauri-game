@@ -63,7 +63,7 @@ const handleClicked = (card: card) => {
   // console.log('all', handleChange())
   // console.log('1111', handleChange().some(item => { return item.id == 1 && item.isMatched }))
   // console.log('clickedCard', clickedCard)
-  if (card.isMatched) {
+  if (!card.isMatched) {
     card.isChecked = true
   }
   if (clickedCard.length < 2) {
