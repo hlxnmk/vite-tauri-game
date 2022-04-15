@@ -9,11 +9,21 @@ import { NLayoutContent, NGrid, NGridItem, NCard } from 'naive-ui'
     <n-grid :x-gap="20" :y-gap="20" cols="1 s:2 m:3 l:4 xl:4 2xl:5" responsive="screen">
       <n-grid-item>
         <router-link to="/memory">
-          <n-card title="记忆游戏">
+          <n-card title="记忆卡片游戏">
             <template #cover>
-              <div class="carbon:direct-link h-48 pl-80 text-green-600"></div>
+              <div class="carbon:direct-link h-48 pl-80 text-indigo-400"></div>
             </template>
-            根据记忆选择两个相同的图片
+            <div class="text-green-600">根据记忆选择两个相同的图片</div>
+          </n-card>
+        </router-link>
+      </n-grid-item>
+      <n-grid-item>
+        <router-link to="/schultegrid">
+          <n-card title="数字舒尔特表">
+            <template #cover>
+              <div class="emojione-v1:input-numbers text-9xl h-48 ml-25"></div>
+            </template>
+            <div class="text-green-600">根据顺序点击数字或字母或汉字</div>
           </n-card>
         </router-link>
       </n-grid-item>
@@ -72,44 +82,33 @@ import { NLayoutContent, NGrid, NGridItem, NCard } from 'naive-ui'
           </n-card>
         </router-link>
       </n-grid-item>
-       <n-grid-item >
+      <n-grid-item>
         <router-link to="/memory">
-          <n-card  title="记忆游戏">
+          <n-card title="记忆游戏">
             <template #cover>
-             <div class="carbon:direct-link h-48  pl-80 text-green-600"></div>
+              <div class="carbon:direct-link h-48 pl-80 text-green-600"></div>
               <!-- <img  class="h-48 " src="../assets/icons/at-solid.svg"  /> -->
             </template>
             根据记忆选择两个相同的图片
           </n-card>
         </router-link>
       </n-grid-item>
-       <n-grid-item >
+      <n-grid-item>
         <router-link to="/memory">
-          <n-card  title="记忆游戏">
+          <n-card title="记忆游戏">
             <template #cover>
-             <div class="carbon:direct-link h-48  pl-80 text-green-600"></div>
+              <div class="carbon:direct-link h-48 pl-80 text-green-600"></div>
               <!-- <img  class="h-48 " src="../assets/icons/at-solid.svg"  /> -->
             </template>
             根据记忆选择两个相同的图片
           </n-card>
         </router-link>
       </n-grid-item>
-       <n-grid-item >
+      <n-grid-item>
         <router-link to="/memory">
-          <n-card  title="记忆游戏">
+          <n-card title="记忆游戏">
             <template #cover>
-             <div class="carbon:direct-link h-48  pl-80 text-green-600"></div>
-              <!-- <img  class="h-48 " src="../assets/icons/at-solid.svg"  /> -->
-            </template>
-            根据记忆选择两个相同的图片
-          </n-card>
-        </router-link>
-      </n-grid-item>
-       <n-grid-item >
-        <router-link to="/memory">
-          <n-card  title="记忆游戏">
-            <template #cover>
-             <div class="carbon:direct-link h-48  pl-80 text-green-600"></div>
+              <div class="carbon:direct-link h-48 pl-80 text-green-600"></div>
               <!-- <img  class="h-48 " src="../assets/icons/at-solid.svg"  /> -->
             </template>
             根据记忆选择两个相同的图片
