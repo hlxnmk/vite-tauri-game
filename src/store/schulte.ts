@@ -89,6 +89,36 @@ export const useSchulteStore = defineStore('schulte', {
         { id: 25, value: 'Y', isChecked: false, isMatched: false },
         { id: 26, value: 'Z', isChecked: false, isMatched: false },
       ], 
+      zhcn5x6: [
+        { id: 1, value: '日', isChecked: false, isMatched: false },
+        { id: 2, value: '照', isChecked: false, isMatched: false },
+        { id: 3, value: '香', isChecked: false, isMatched: false },
+        { id: 4, value: '炉', isChecked: false, isMatched: false },
+        { id: 5, value: '生', isChecked: false, isMatched: false },
+        { id: 6, value: '紫', isChecked: false, isMatched: false },
+        { id: 7, value: '烟', isChecked: false, isMatched: false },
+        { id: 8, value: '遥', isChecked: false, isMatched: false },
+        { id: 9, value: '看', isChecked: false, isMatched: false },
+        { id: 10, value: '瀑', isChecked: false, isMatched: false },
+        { id: 11, value: '布', isChecked: false, isMatched: false },
+        { id: 12, value: '挂', isChecked: false, isMatched: false },
+        { id: 13, value: '前', isChecked: false, isMatched: false },
+        { id: 14, value: '川', isChecked: false, isMatched: false },
+        { id: 15, value: '飞', isChecked: false, isMatched: false },
+        { id: 16, value: '流', isChecked: false, isMatched: false },
+        { id: 17, value: '直', isChecked: false, isMatched: false },
+        { id: 18, value: '下', isChecked: false, isMatched: false },
+        { id: 19, value: '三', isChecked: false, isMatched: false },
+        { id: 20, value: '千', isChecked: false, isMatched: false },
+        { id: 21, value: '尺', isChecked: false, isMatched: false },
+        { id: 22, value: '疑', isChecked: false, isMatched: false },
+        { id: 23, value: '是', isChecked: false, isMatched: false },
+        { id: 24, value: '银', isChecked: false, isMatched: false },
+        { id: 25, value: '河', isChecked: false, isMatched: false },
+        { id: 26, value: '落', isChecked: false, isMatched: false },
+        { id: 27, value: '九', isChecked: false, isMatched: false },
+        { id: 28, value: '天', isChecked: false, isMatched: false },
+      ], 
     }
   },
   getters: {
@@ -108,6 +138,10 @@ export const useSchulteStore = defineStore('schulte', {
     square5x6L: (state) => {
       const shuffle = arr => arr.sort(() => 0.5 - Math.random())
       return shuffle(state.letter5x6)
+    },
+    square5x6CN: (state) => {
+      const shuffle = arr => arr.sort(() => 0.5 - Math.random())
+      return shuffle(state.zhcn5x6)
     },
 
   },
