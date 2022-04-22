@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NLayoutContent, NGrid, NGridItem, NCard } from 'naive-ui'
+import { NLayoutContent, NGrid, NGridItem, NCard,NImage} from 'naive-ui'
 
 
 </script>
@@ -11,7 +11,7 @@ import { NLayoutContent, NGrid, NGridItem, NCard } from 'naive-ui'
         <router-link to="/memory">
           <n-card title="记忆卡片游戏">
             <template #cover>
-              <div class="carbon:direct-link h-48 pl-80 text-indigo-400"></div>
+              <div class="carbon:direct-link h-48 pl-80 text-indigo-400 hover:rotate-10"></div>
             </template>
             <div class="text-green-600">根据记忆选择两个相同的图片</div>
           </n-card>
@@ -21,31 +21,29 @@ import { NLayoutContent, NGrid, NGridItem, NCard } from 'naive-ui'
         <router-link to="/schultegrid">
           <n-card title="数字舒尔特表">
             <template #cover>
-              <div class="emojione-v1:input-numbers text-9xl h-48 ml-25"></div>
+              <div class="emojione-v1:input-numbers text-9xl h-48 ml-25 hover:rotate-10"></div>
             </template>
             <div class="text-green-600">根据顺序点击数字或字母或汉字</div>
           </n-card>
         </router-link>
       </n-grid-item>
       <n-grid-item>
-        <router-link to="/memory">
-          <n-card title="记忆游戏">
-            <template #cover>
-              <div class="carbon:direct-link h-48 pl-80 text-green-600"></div>
-              <!-- <img  class="h-48 " src="../assets/icons/at-solid.svg"  /> -->
+        <router-link to="/cube">
+          <n-card title="魔方练习" class="h-76 pt-4" >  
+            <template #cover >
+               <n-image class="w-40 mt-1 pl-22 hover:rotate-10"  src="cfop/icon/logo.png" alt="logo"  />
             </template>
-            根据记忆选择两个相同的图片
+            <div class="text-green-600"> 根据CFOP公式练习</div>
           </n-card>
         </router-link>
       </n-grid-item>
       <n-grid-item>
-        <router-link to="/memory">
-          <n-card title="记忆游戏">
+        <router-link to="/babylon">
+          <n-card title="巴比伦3D">
             <template #cover>
-              <div class="carbon:direct-link h-48 pl-80 text-green-600"></div>
-              <!-- <img  class="h-48 " src="../assets/icons/at-solid.svg"  /> -->
+              <div class="bi:badge-3d mt-4 h-44 pl-80 text-yellow-400 hover:rotate-10"></div>
             </template>
-            根据记忆选择两个相同的图片
+            巴比伦3D
           </n-card>
         </router-link>
       </n-grid-item>
