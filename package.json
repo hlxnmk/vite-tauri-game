@@ -14,7 +14,8 @@
     "pinia": "^2.0.12",
     "unocss": "^0.29.5",
     "vue": "^3.2.31",
-    "vue-router": "^4.0.13"
+    "vue-router": "^4.0.13",
+    "vue-timer-hook": "^1.0.0"
   },
   "devDependencies": {
     "@iconify/json": "^2.1.18",
