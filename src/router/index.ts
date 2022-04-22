@@ -5,13 +5,17 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Content from '../pages/Content.vue'
 import Memory from '../pages/Memory.vue'
 import SchulteGrid from '../pages/SchulteGrid.vue'
+import Cube from '../pages/Cube.vue'
+import Babylon from '../pages/Babylon.vue'
 
 //定义路由路径
 const routes = [
   { path: '/', component: Content },
   { path: '/content', component: Content },
   { path: '/memory', component: Memory },
-   { path: '/schultegrid', component: SchulteGrid },
+  { path: '/schultegrid', component: SchulteGrid },
+  { path: '/cube', component: Cube},
+  { path: '/babylon', component: Babylon},
 
 ]
 // 创建路由 
@@ -21,3 +25,4 @@ const router = createRouter({
 })
 //暴露路由
 export default router
+
