@@ -29,7 +29,7 @@ interface card {
 
 <template>
   <n-layout-content>
-    <n-space class="h-15 pt-5 pl-48 bg-gray-200">
+    <n-space class="h-15 pt-5 pl-48 ">
       <n-button
         class="bi:arrow-left  text-xl text-green-500 animate__animated animate__slideOutLeft animate__slower animate__infinite"
         type="primary" size="tiny" @click="router.back()">
@@ -47,8 +47,9 @@ interface card {
         </div>
       </n-gradient-text>
     </n-space>
-    <div class="inline-grid ml-1.5 gap-x-2.5 gap-y-3 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4  md:grid-cols-3  sm:grid-cols-2 "  >
-      <div class="w-[243px] ring-4 rounded-md  " v-for="f2l  in  cfop.f2l" :key="f2l.id">
+    <div
+      class="inline-grid  2xl:grid-flow-col 2xl:grid-rows-7 2xl:grid-cols-6   xl:grid-cols-5   lg:grid-cols-4   md:grid-cols-3 sm:grid-cols-2 ml-1.5 gap-x-2.5 gap-y-3  ">
+      <div class="w-[243px] ring-4 rounded-md   " v-for="f2l  in  cfop.f2l" :key="f2l.id">
         <img class=" w-16 mt-2 ml-1" :src="f2l.icon" />
         <div class="float-left ">
           <div class=" text-red-900 ml-1 mt-1 w-5 text-sm font-bold ">{{ f2l.name }}</div>
@@ -57,7 +58,8 @@ interface card {
         <img class="w-37 mb-1" :src="f2l.algorithm" />
       </div>
     </div>
-    <div class="inline-grid mt-3 ml-1.5 gap-x-2.5 gap-y-3 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4  md:grid-cols-3  sm:grid-cols-2 "  >
+    <div
+      class="inline-grid mt-3 ml-1.5 gap-x-2.5 gap-y-3 2xl:grid-flow-col 2xl:grid-rows-10 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4  md:grid-cols-3  sm:grid-cols-2 ">
       <div class="w-[243px] ring-4 rounded-md  " v-for="oll  in  cfop.oll" :key="oll.id">
         <img class=" w-16 mt-2 ml-1" :src="oll.icon" />
         <div class="float-left ">
@@ -67,7 +69,8 @@ interface card {
         <img class="w-37 mb-1" :src="oll.algorithm" />
       </div>
     </div>
-    <div class="inline-grid mt-3 mb-3 ml-1.5 gap-x-2.5 gap-y-3 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4  md:grid-cols-3  sm:grid-cols-2 "  >
+    <div
+      class="inline-grid  mt-3 mb-3 ml-1.5 gap-x-2.5 gap-y-3 2xl:grid-flow-col 2xl:grid-rows-4 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4  md:grid-cols-3  sm:grid-cols-2 ">
       <div class="w-[243px] ring-4 rounded-md  " v-for="pll  in  cfop.pll" :key="pll.id">
         <img class=" w-16 mt-2 ml-1" :src="pll.icon" />
         <div class="float-left ">
@@ -82,7 +85,7 @@ interface card {
 
 <style scoped>
 .n-layout-content {
-  background: #E5E7EB;
+  background: white;
   position: fixed;
   top: 0;
   left: 0;
