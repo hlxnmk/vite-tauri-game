@@ -3,27 +3,25 @@ import { NLayoutContent, NGrid, NGridItem, NGradientText, NSpace, NButton, useMe
 import { useCfopStore } from '../store/cfop'
 import { useStopwatch } from 'vue-timer-hook'
 import { useRouter } from 'vue-router' //3.2setup中使用路由需要引入
-
+import { ref, onMounted } from "vue"
+import { createScene } from "../scenes/VillageScene"
 
 const router = useRouter()
 const cfop = useCfopStore()
 let stopwatch = useStopwatch()
 let message = useMessage()
-
 const initialize = () => {
   stopwatch.reset()
 }
 
 
-// 定义一个接口来约束card类型
-interface card {
-  id: number;
-  name: string;
-  subgroups: string;
-  icon: string;
-  algorithm: string;
-}
+const bjsCanvas = ref<HTMLCanvasElement | null>(null)
 
+onMounted(async () => {
+  if (bjsCanvas.value) {
+    createScene(bjsCanvas.value)
+  }
+})
 
 </script>
 
@@ -34,7 +32,7 @@ interface card {
         class="bi:arrow-left  text-xl text-green-500 animate__animated animate__slideOutLeft animate__slower animate__infinite"
         type="primary" size="tiny" @click="router.back()">
       </n-button>
-      <n-gradient-text type="success" class="pl-8 animate-pulse">CFOP公式练习</n-gradient-text>
+      <n-gradient-text type="success" class="pl-8 animate-pulse">3D显示</n-gradient-text>
       <n-button class=" ml-5" type="primary" size="tiny" @click="initialize">
         开始
       </n-button>
@@ -47,36 +45,9 @@ interface card {
         </div>
       </n-gradient-text>
     </n-space>
-    <div class="inline-grid ml-1.5 gap-x-2.5 gap-y-3 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4  md:grid-cols-3  sm:grid-cols-2 "  >
-      <div class="w-[243px] ring-4 rounded-md  " v-for="f2l  in  cfop.f2l" :key="f2l.id">
-        <img class=" w-16 mt-2 ml-1" :src="f2l.icon" />
-        <div class="float-left ">
-          <div class=" text-red-900 ml-1 mt-1 w-5 text-sm font-bold ">{{ f2l.name }}</div>
-          <div class=" text-green-500 ml-1  w-5 text-xs ">{{ f2l.subgroups }}</div>
-        </div>
-        <img class="w-37 mb-1" :src="f2l.algorithm" />
-      </div>
-    </div>
-    <div class="inline-grid mt-3 ml-1.5 gap-x-2.5 gap-y-3 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4  md:grid-cols-3  sm:grid-cols-2 "  >
-      <div class="w-[243px] ring-4 rounded-md  " v-for="oll  in  cfop.oll" :key="oll.id">
-        <img class=" w-16 mt-2 ml-1" :src="oll.icon" />
-        <div class="float-left ">
-          <div class=" text-red-900 ml-1 mt-1 w-5 text-sm font-bold ">{{ oll.name }}</div>
-          <div class=" text-green-500 ml-1  w-5 text-xs ">{{ oll.subgroups }}</div>
-        </div>
-        <img class="w-37 mb-1" :src="oll.algorithm" />
-      </div>
-    </div>
-    <div class="inline-grid mt-3 mb-3 ml-1.5 gap-x-2.5 gap-y-3 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4  md:grid-cols-3  sm:grid-cols-2 "  >
-      <div class="w-[243px] ring-4 rounded-md  " v-for="pll  in  cfop.pll" :key="pll.id">
-        <img class=" w-16 mt-2 ml-1" :src="pll.icon" />
-        <div class="float-left ">
-          <div class=" text-red-900 ml-1 mt-1 w-5 text-sm font-bold ">{{ pll.name }}</div>
-          <div class=" text-green-500 ml-1  w-5 text-xs ">{{ pll.subgroups }}</div>
-        </div>
-        <img class="w-37 mb-1" :src="pll.algorithm" />
-      </div>
-    </div>
+    <!-- <babylon id="myViewer" extends="minimal"></babylon> -->
+    <!-- <babylon extends="minimal" model="/meshs/village.glb"></babylon> -->
+    <canvas ref="bjsCanvas" width="1600" height="700" />
   </n-layout-content>
 </template>
 
